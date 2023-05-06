@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ea47e2ed289df498ffacbba38844e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: EnemyPoint2
-  movementSpeed: 4
+  movementSpeed: 1.5
+  enemyWaypoint: {fileID: 0}
 --- !u!50 &-6511993669486997792
 Rigidbody2D:
   serializedVersion: 4

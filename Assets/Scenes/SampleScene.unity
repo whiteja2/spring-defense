@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 28493492}
   - component: {fileID: 28493491}
+  - component: {fileID: 28493494}
+  - component: {fileID: 28493493}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -153,7 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6033582722229777459, guid: 545dc75c0417fe94195092870dacb90a, type: 3}
-  spawnInterval: 2
+  enemyWaypoint: {fileID: 1718527588}
+  spawnInterval: 14
   spawnRadius: 0
 --- !u!4 &28493492
 Transform:
@@ -170,6 +173,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28493493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28493490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 476232861122520577, guid: af837e89cbcd9ed4f9a293b3312d9dd9, type: 3}
+  enemyWaypoint: {fileID: 1718527588}
+  spawnInterval: 11
+  spawnRadius: 0
+--- !u!114 &28493494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28493490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 9060550487147506900, guid: 8942537be73121043a0addf15636e954, type: 3}
+  enemyWaypoint: {fileID: 1718527588}
+  spawnInterval: 23
+  spawnRadius: 0
 --- !u!1 &445490675
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +217,7 @@ GameObject:
   - component: {fileID: 445490677}
   m_Layer: 0
   m_Name: EnemyPoint (1)
-  m_TagString: EnemyPoint2
+  m_TagString: EnemyPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900328548}
   - component: {fileID: 900328547}
+  - component: {fileID: 900328550}
   m_Layer: 0
   m_Name: EnemySpawner (2)
   m_TagString: Untagged
@@ -341,8 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 476232861122520577, guid: af837e89cbcd9ed4f9a293b3312d9dd9, type: 3}
-  spawnInterval: 2
+  enemyPrefab: {fileID: 9060550487147506900, guid: 8942537be73121043a0addf15636e954, type: 3}
+  enemyWaypoint: {fileID: 1407715152}
+  spawnInterval: 10
   spawnRadius: 0
 --- !u!4 &900328548
 Transform:
@@ -359,6 +396,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &900328550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900328546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6033582722229777459, guid: 545dc75c0417fe94195092870dacb90a, type: 3}
+  enemyWaypoint: {fileID: 1407715152}
+  spawnInterval: 14
+  spawnRadius: 0
 --- !u!1 &1407715152
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +424,7 @@ GameObject:
   - component: {fileID: 1407715154}
   m_Layer: 0
   m_Name: EnemyPoint (2)
-  m_TagString: EnemyPoint3
+  m_TagString: EnemyPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,6 +538,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1848862277}
   - component: {fileID: 1848862276}
+  - component: {fileID: 1848862279}
+  - component: {fileID: 1848862278}
   m_Layer: 0
   m_Name: EnemySpawner (1)
   m_TagString: Untagged
@@ -504,8 +559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 9060550487147506900, guid: 8942537be73121043a0addf15636e954, type: 3}
-  spawnInterval: 2
+  enemyPrefab: {fileID: 6033582722229777459, guid: 545dc75c0417fe94195092870dacb90a, type: 3}
+  enemyWaypoint: {fileID: 445490675}
+  spawnInterval: 9
   spawnRadius: 0
 --- !u!4 &1848862277
 Transform:
@@ -522,3 +578,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848862278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848862275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 476232861122520577, guid: af837e89cbcd9ed4f9a293b3312d9dd9, type: 3}
+  enemyWaypoint: {fileID: 445490675}
+  spawnInterval: 20
+  spawnRadius: 0
+--- !u!114 &1848862279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848862275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe314c8080859645b46b966357db0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 9060550487147506900, guid: 8942537be73121043a0addf15636e954, type: 3}
+  enemyWaypoint: {fileID: 445490675}
+  spawnInterval: 15
+  spawnRadius: 0

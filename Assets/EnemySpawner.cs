@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject enemyWaypoint;
+
     public float spawnInterval = 2f; // Time interval between enemy spawns
     public float spawnRadius = 1f; // Maximum distance from the spawner where enemies can spawn
 
@@ -29,6 +31,13 @@ public class EnemySpawner : MonoBehaviour
         Vector2 randomPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
 
         // Instantiate the enemy prefab at the random position
-        Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+
+        EnemyBehavior enemyMovement = newEnemy.GetComponent<EnemyBehavior>();
+
+        if (enemyMovement != null)
+        {
+            enemyMovement.enemyWaypoint = enemyWaypoint.transform;
+        }
     }
 }

@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ea47e2ed289df498ffacbba38844e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: EnemyPoint
-  movementSpeed: 3
+  movementSpeed: 2
+  enemyWaypoint: {fileID: 0}
 --- !u!60 &-689480731598626488
 PolygonCollider2D:
   m_ObjectHideFlags: 0
