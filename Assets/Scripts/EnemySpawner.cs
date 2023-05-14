@@ -6,9 +6,9 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject enemyWaypoint;
-
+    private bool canSpawn = false;
     public float spawnInterval = 2f; // Time interval between enemy spawns
-    public float spawnRadius = 1f; // Maximum distance from the spawner where enemies can spawn
+    public float spawnRadius = 0f; // Maximum distance from the spawner where enemies can spawn
 
     private float spawnTimer = 0f;
 
@@ -17,14 +17,26 @@ public class EnemySpawner : MonoBehaviour
         // Update the spawn timer
         spawnTimer += Time.deltaTime;
 
-        // Check if it's time to spawn a new enemy
-        if (spawnTimer >= spawnInterval)
+        if (canSpawn)
         {
-            SpawnEnemy();
-            spawnTimer = 0f; // Reset the timer
+            // Check if it's time to spawn a new enemy
+            if (spawnTimer >= spawnInterval)
+            {
+                SpawnEnemy();
+                spawnTimer = 0f; // Reset the timer
+            }
         }
     }
 
+    public void StartSpawning()
+    {
+        canSpawn = true;
+    }
+
+    public void StopSpawning()
+    {
+        canSpawn = false;
+    }
     private void SpawnEnemy()
     {
         // Calculate a random position within the spawn radius
@@ -34,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         // GameObject newEnemy = Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
         GameObject newEnemy = Instantiate(enemyPrefab, this.transform);
 
-        
+
         EnemyBehavior enemyMovement = newEnemy.GetComponent<EnemyBehavior>();
 
         if (enemyMovement != null)

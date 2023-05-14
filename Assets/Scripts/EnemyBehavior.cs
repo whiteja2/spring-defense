@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -12,11 +14,18 @@ public class EnemyBehavior : MonoBehaviour
     public GameManager gameManager;
     public int rewardAmount = 10;
 
+    private TMP_Text loseText;
+
 
     private void Start()
     {
         gameManager = GameManager.instance;
         target = GameObject.FindGameObjectWithTag(targetTag);
+        GameObject textObject = GameObject.FindGameObjectWithTag("LoseText");
+        if (textObject != null)
+        {
+            loseText = textObject.GetComponent<TMP_Text>();
+        }
     }
 
     private void Update()
@@ -43,6 +52,11 @@ public class EnemyBehavior : MonoBehaviour
         {
             hasReachedTarget = true;
             Destroy(gameObject); // Destroy the enemy GameObject
+            if (loseText != null)
+            {
+                loseText.gameObject.SetActive(true);
+                loseText.text = "You Suck!";
+            }
         }
     }
 
